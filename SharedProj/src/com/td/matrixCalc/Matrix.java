@@ -8,7 +8,6 @@ public class Matrix {
 	public ArrayList < ArrayList < Double >> mat = new ArrayList < ArrayList < Double >> ();
 	
 	private Matrix resultMatrix;
-	private Matrix tempMatrix;
 	private double tempAdd;
 	
 	@SuppressWarnings("unchecked")
@@ -250,7 +249,34 @@ public class Matrix {
 	
 	
 	
+	public Matrix calcCofactorMatrix () {
+		
+		resultMatrix.mat.clear();
+		
+		for ( int i =0; i<this.getRows() ;i++) {
+			resultMatrix.mat.add(new ArrayList <Double> ());
+			
+			for ( int j=0; j<this.getCols() ; j++) {
+				resultMatrix.mat.get(i).add( Math.pow(-1, i+j) * this.removeRow(i).removeCol(j).getDeterminantValue() );
+			}
+		}
+		
+		return resultMatrix;
+		
+	}
 	
+	public Matrix calcInverseMatrix () {
+		
+		if ( this.getRows() == 2) {
+			resultMatrix = new Matrix (2, 2, this.mat.get(1).get(1) , (-1)*this.mat.get(0).get(1), (-1)*this.mat.get(1).get(0),  this.mat.get(0).get(0));
+			return resultMatrix.divideBy(this.getDeterminantValue());
+		}
+		
+		
+		resultMatrix = this.calcCofactorMatrix().getTransposeMatrix();
+		return resultMatrix.divideBy(this.getDeterminantValue());
+		
+	}
 	
 	
 	
