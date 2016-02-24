@@ -33,12 +33,12 @@ public class Book {
 	
 	
 	// constructor
-	public Book(String bookId , String title , String author ) {
+/*	public Book(String bookId , String title , String author ) {
 		//Date 
 		this.bookId = bookId;
 		this.title = title;
 		this.author = author;
-	}
+	}*/
 
 	public String getIsbn() {
 		return isbn;
