@@ -8,11 +8,11 @@ public class MyLibrary {
 	ArrayList<Book> books;
 	ArrayList<Person> people;
 
-	public MyLibrary(String name) {
+	/*public MyLibrary(String name) {
 		this.name = name;
 		books = new ArrayList<Book>();
 		people = new ArrayList<Person>();
-	}
+	}*/
 	
 	public String getName() {
 		return name;

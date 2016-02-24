@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+private String isbn;
+	
+	private String collegeId;  // college associated with book // [optional]
+	private String title;
+	private String author;
+	private Person person;  // person who has taken this book [optional]
+	private String dateOfIssue; // when book has issued to above person
+	private String dateOfReturn; // automatic calculate depending on college rule
+	private int numberOfPages;  // [optional]
+	private String bindingType; // [optional]
+	private int yearOfPurchase;
+	private String language;
+	private boolean renewable; 
+          <hibernate-mapping>
+          <class name="com.td.libpackage" table="Book">
+          <id name="bookId">
+          <generator class="assigned"></generator>
+          </id>
+          
+          <property name="isbn"></property>
+          <property name="collegeId"></property>
+          <property name="title"></property>
+          <property name="author"></property>
+          </class>
+          
+          </hibernate-mapping>

@@ -13,7 +13,6 @@ public class Book {
 	private String isbn;
 	
 	private String collegeId;  // college associated with book // [optional]
-	
 	private String title;
 	private String author;
 	private Person person;  // person who has taken this book [optional]
@@ -25,6 +24,32 @@ public class Book {
 	private String language;
 	private boolean renewable; // can we renew it ? depends in that college defined by college
 	
+	
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+
 	//ArrayList <String> tags = new ArrayList <String> (); // [optonal]
 	
 	// books history should reveal that when it was taken by whome and for how many days
@@ -33,12 +58,12 @@ public class Book {
 	
 	
 	// constructor
-	public Book(String bookId , String title , String author ) {
+/*	public Book(String bookId , String title , String author ) {
 		//Date 
 		this.bookId = bookId;
 		this.title = title;
 		this.author = author;
-	}
+	}*/
 
 	public String getIsbn() {
 		return isbn;
